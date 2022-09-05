@@ -1,0 +1,43 @@
+{
+  "status": "ok",
+  "fields": [
+    {
+      "type": "TextInput",
+      "props": {
+        "key": "fn",
+        "label": "First Name",
+        "variant": "standard"
+      }
+    },
+    {
+      "type": "TextInput",
+      "props": {
+        "key": "ln",
+        "label": "Last Name",
+        "variant": "standard"
+      }
+    },
+    {
+      "type": "TextInput",
+      "props": {
+        "key": "ad",
+        "label": "Address",
+        "variant": "standard"
+      }
+    },
+    {
+      "type": "Switch",
+      "props": {
+        "key": "isMember",
+        "defaultValue": true
+      }
+    },
+    {
+      "type": "Switch",
+      "props": {
+        "key": "isPlumber",
+        "defaultValue": false
+      }
+    }
+  ]
+}
