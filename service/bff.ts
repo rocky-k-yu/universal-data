@@ -50,7 +50,7 @@ export function getConfigs(method: string, contentType: string, url: string, opt
   return configs;
 }
 
-export const basePath = '/universal-data/mock-api';
+export const basePath = '/universal-data';
 
 export interface IList<T> extends Array<T> {}
 export interface List<T> extends Array<T> {}
@@ -80,13 +80,13 @@ export class PagedResultDto<T = any> implements IPagedResult<T> {
 // customer definition
 // empty
 
-export class SignupService {
+export class ExperienceService {
   /**
    * Get dynamic form
    */
   static getDynamicForm(options: IRequestOptions = {}): Promise<GetDynamicFormResponse> {
     return new Promise((resolve, reject) => {
-      let url = basePath + '/dynamic-form.json';
+      let url = basePath + '/experience-service/dynamic-form.json';
 
       const configs: IRequestConfig = getConfigs('get', 'application/json', url, options);
 
@@ -97,7 +97,7 @@ export class SignupService {
   }
 }
 
-export class MarketingService {
+export class CmsService {
   /**
    * Get product benefits
    */
@@ -109,7 +109,7 @@ export class MarketingService {
     options: IRequestOptions = {}
   ): Promise<GetProductBenefitsByIdResponse> {
     return new Promise((resolve, reject) => {
-      let url = basePath + '/product-benefits.json';
+      let url = basePath + '/cms-service/product-benefits.json';
 
       const configs: IRequestConfig = getConfigs('get', 'application/json', url, options);
       configs.params = { productId: params['productId'] };

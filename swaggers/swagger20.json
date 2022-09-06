@@ -6,7 +6,7 @@
     "title": "Uber API"
   },
   "host": "rocky-k-yu.github.io",
-  "basePath": "/universal-data/mock-api",
+  "basePath": "/universal-data",
   "schemes": [
     "https"
   ],
@@ -14,10 +14,10 @@
     "application/json"
   ],
   "paths": {
-    "/dynamic-form.json": {
+    "/experience-service/dynamic-form.json": {
       "get": {
         "tags": [
-          "Signup"
+          "experience"
         ],
         "summary": "Get dynamic form",
         "operationId": "GetDynamicForm",
@@ -38,10 +38,10 @@
         }
       }
     },
-    "/product-benefits.json": {
+    "/cms-service/product-benefits.json": {
       "get": {
         "tags": [
-          "Marketing"
+          "cms"
         ],
         "summary": "Get product benefits",
         "operationId": "GetProductBenefitsById",
