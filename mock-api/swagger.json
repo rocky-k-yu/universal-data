@@ -1,0 +1,313 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Move your app forward with the Uber API",
+    "version": "1.0.0",
+    "title": "Uber API"
+  },
+  "host": "rocky-k-yu.github.io",
+  "basePath": "/universal-data/mock-api",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/dynamic-form.json": {
+      "get": {
+        "tags": [
+          "Signup"
+        ],
+        "summary": "Get dynamic form",
+        "operationId": "GetDynamicForm",
+        "description": "Demo of experience layer of dynamic form from backend",
+        "responses": {
+          "200": {
+            "description": "An object of GetDynamicFormResponse",
+            "schema": {
+              "$ref": "#/definitions/GetDynamicFormResponse"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/product-benefits.json": {
+      "get": {
+        "tags": [
+          "Marketing"
+        ],
+        "summary": "Get product benefits",
+        "operationId": "GetProductBenefitsById",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "query",
+            "description": "Product ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "description": "Retrieve content from backend",
+        "responses": {
+          "200": {
+            "description": "An object of GetProductBenefitsByIdResponse",
+            "schema": {
+              "$ref": "#/definitions/GetProductBenefitsByIdResponse"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "GetDynamicFormResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FormFields"
+          }
+        }
+      }
+    },
+    "FormFields": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "props": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string"
+            },
+            "variant": {
+              "type": "string"
+            },
+            "defaultValue": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "GetProductBenefitsByIdResponse": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "productBenefits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductBenefits"
+          }
+        }
+      }
+    },
+    "ProductBenefits": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "secondaryText": {
+          "type": "string"
+        }
+      }
+    },
+    "RoleType": {
+      "type": "string",
+      "description": "Enumeration of Role Type",
+      "enum": [
+        "Admin",
+        "User",
+        "SetSms"
+      ]
+    },
+    "CreateOrUpdateUserInput": {
+      "required": [
+        "cardNo",
+        "userName",
+        "password"
+      ],
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "int32",
+          "description": "用户ID(ID来自User表)",
+          "type": "integer"
+        },
+        "userRights": {
+          "description": "用户权限",
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "enum": [
+              "View",
+              "Operate",
+              "Auth",
+              "Search",
+              "Delete",
+              "UserManage",
+              "UserConfig",
+              "SetTime",
+              "SetNetwork",
+              "SetSms",
+              "SystemManage"
+            ],
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Abc": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "isLow": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ArrayOfAbc": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Abc"
+      }
+    },
+    "NumberArrayEnumModel": {
+      "type": "object",
+      "properties": {
+        "foo": {
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8
+            ],
+            "type": "integer"
+          }
+        },
+        "bar": {
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "string"
+        }
+      }
+    },
+    "PagedResultDto[AuditLogListDto]": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "items": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AuditLogListDto"
+          }
+        }
+      }
+    },
+    "AuditLogListDto": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "JsonResult[Guid]": {
+      "description": "接口返回结果",
+      "type": "object",
+      "properties": {
+        "result": {
+          "description": "结果",
+          "type": "boolean"
+        },
+        "code": {
+          "description": "代码",
+          "enum": [
+            "Success",
+            "Timeout",
+            "Fail",
+            "Expired",
+            "Error",
+            "InternalServerError",
+            "InvalidAnonymousAccess",
+            "UserSessionExpired",
+            "UserIsBinded"
+          ],
+          "type": "string"
+        },
+        "data": {
+          "format": "uuid",
+          "description": "数据",
+          "type": "string"
+        },
+        "message": {
+          "description": "消息",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
