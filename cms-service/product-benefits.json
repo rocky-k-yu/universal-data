@@ -2,24 +2,24 @@
   "status": "ok",
   "productBenefits": [
     {
-      "title": "Brunch this weekend",
-      "secondaryText": "I'll be in your neighborhood doing errands this…"
+      "title": "Manage your cash flow with credit options",
+      "secondaryText": "$5000 Credit Card and 30-Day Account options available for Bunnings Trade."
     },
     {
-      "title": "Summer BBQ",
-      "secondaryText": "Wish I could come, but I'm out of town this…"
+      "title": "Shop online and check out faster",
+      "secondaryText": "Shop through the Bunnings PowerPass App and on the Bunnings Trade website."
     },
     {
-      "title": "Oui oui",
-      "secondaryText": "Do you have Paris recommendations? Have you ever been?"
+      "title": "Get better prices with trade discounts",
+      "secondaryText": "Exclusive PowerPass pricing"
     },
     {
-      "title": "Birthday gift",
-      "secondaryText": "Have any ideas about what we should get Heidi for her birthday?"
+      "title": "Easier book-keeping using saved transaction records",
+      "secondaryText": "Online and in-store receipts with MYOB integration through Bunnings Trade."
     },
     {
-      "title": "Recipe to try",
-      "secondaryText": "We should eat this: Grate, Squash, Corn, and tomatillo Tacos."
+      "title": "Access more value at Tool Kit Depot",
+      "secondaryText": "PowerPass pricing is now available on purchases made in-store at Tool Kit Depot in SA and WA*."
     }
   ]
 }
